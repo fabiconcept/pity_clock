@@ -1,0 +1,126 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root{
+
+}
+
+.app{
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  transition: .25s ease;
+  position: relative;
+}
+
+.dark{
+  position: absolute;
+  transition: .25s ease;
+  height: 100vh;
+  top: 0;
+  background-color: rgb(3, 3, 24);
+  width: 100vw;
+  z-index: -1;
+  opacity: 1;
+}
+
+.time{
+  font-size: 5rem;
+  margin: 2rem 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.text{
+  display: flex;
+  justify-content: space-between;
+  width: 96%;
+  font-family: "Montserrat", sans-serif;
+  margin: 10px auto;
+}
+.day{
+  display: flex;
+  justify-content: center;
+  width: 96%;
+  font-size: 2rem;
+  font-family: "Montserrat", sans-serif;
+  text-transform: capitalize;
+  margin: 10px auto;
+}
+.clock{
+  margin-top: -3rem;
+}
+
+@media screen and (max-width: 700px) {
+  .time{
+    font-size: 3rem;
+  }
+  .day{
+    font-size: 1.55rem;
+  }
+}
+
+.animate{
+  position: relative;
+  display: flex;
+  margin-top: -4rem;
+  margin-bottom: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.animate .night > img{
+  width: 10rem;
+  animation: day 2.5s ease-in-out infinite;
+}
+
+.animate .night .clouds{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animate .night .clouds img{
+  width: 10rem;
+  filter: blur(12px);
+  opacity: .25;
+  z-index: 20;
+  animation: cloud 10s ease-in-out infinite;
+  position: absolute;
+}
+
+.animate .night .clouds img:nth-child(1){
+  left: -6.6rem;
+}
+.animate .night .clouds img:nth-child(2){
+  top: 5rem;
+  right: -1rem;
+}
+.animate .night .clouds img:nth-child(4){
+  top: 5rem;
+  width: 5rem;
+  left: 0rem;
+  opacity: .1;
+  z-index: -1;
+}
+.animate .night .clouds img:nth-child(3){
+  right: -6.6rem;
+}
+
+@keyframes day {
+  50%{
+    transform: translateY(-2rem) scale(108%);
+  }
+}
+
+@keyframes cloud {
+  50%{
+    transform: translateY(-1rem) rotate(5deg);
+  }
+}
